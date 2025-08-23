@@ -1,0 +1,518 @@
+{
+  "@@last_modified": "2019-12-14T18:07:05.374930",
+  "Language Symbol": "Language Symbol",
+  "@Language Symbol": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Our Vision": "نسعى لتحقيق رؤيتنا",
+  "@Our Vision": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Next": "التالي",
+  "@Next": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Previous": "السابق",
+  "@Previous": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Finish": "انهاء",
+  "@Finish": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Login": "التحقق من الحساب",
+  "@Login": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Email": "البريد الالكتروني",
+  "@Email": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Password": "كلمة المرور",
+  "@Password": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Forget Password": "نسيت كلمة المرور",
+  "@Forget Password": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Click Here": " اضغط هنا",
+  "@Click Here": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Has Account": "ليس لديك حساب ؟",
+  "@Has Account": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Register": "انشاء حساب جديد",
+  "@Register": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Skip": "تخطي كزائر",
+  "@Skip": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Phone No Validation": "من فضلك أدخل رقم الجوال بشكل صحيح",
+  "@Phone No Validation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Email Validation": "من فضلك أدخل البريد الإلكتروني الخاص بك",
+  "@Email Validation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Password Validation": "من فضلك أدخل كلمة المرور أكبر من  4",
+  "@Password Validation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Name": "اسم المستخدم",
+  "@Name": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Name Validation": "يرجي ادخال الاسم الخاص بك",
+  "@Name Validation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Password Verify": "تأكيد كلمة المرور",
+  "@Password Verify": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Password Verify Validation": "يرجي إدخال تأكيد كلمة المرور بشكل صحيح",
+  "@Password Verify Validation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Password Not Identical": "كلمة المرور غير متطابقة",
+  "@Password Not Identical": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Phone No": "رقم الجوال",
+  "@Phone No": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "I Accept": " أوافق  على ",
+  "@I Accept": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Terms": "الشروط والأحكام",
+  "@Terms": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Send Message To Mobile": "أكتب رقم الجوال لإرسال كود التفعيل عليه",
+  "@Send Message To Mobile": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Save": "حفظ",
+  "@Save": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Send": "ارسال",
+  "@Send": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Accept Terms": "يرجي قبول الشروط والأحكام",
+  "@Accept Terms": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Code To Restore Password": "كود استرجاع كلمة المرور",
+  "@Code To Restore Password": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Enter Code To Restore Password": "أدخل كود إسترجاع كلمة المرور المرسل على جوالك",
+  "@Enter Code To Restore Password": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Restore Password": "استرجاع كلمة المرور",
+  "@Restore Password": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Confirm New Password": "تأكيد كلمة المرور الجديدة",
+  "@Confirm New Password": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Account Activation Code": " كود تفعيل حسابك",
+  "@Account Activation Code": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Enter Code To Activate Account": "أدخل كود تفعيل حسابك المرسل على جوالك",
+  "@Enter Code To Activate Account": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Confirmation Of Activation": "تأكيد التفعيل",
+  "@Confirmation Of Activation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Home": "الرئيسية",
+  "@Home": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Odrers": "طلباتي",
+  "@Odrers": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Favourite": "المفضلة",
+  "@Favourite": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Cart": "سلة الشراء",
+  "@Cart": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Account": "حسابي",
+  "@Account": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Personal Info": "المعلومات الشخصية",
+  "@Personal Info": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "About": "عن التطبيق",
+  "@About": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Contact Us": "تواصل معنا",
+  "@Contact Us": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Language": "اللغة",
+  "@Language": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Log out": "خروج",
+  "@Log out": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Enter": "دخول",
+  "@Enter": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Edit Info": "تعديل المعلومات",
+  "@Edit Info": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Edit Password": "تعديل كلمة المرور",
+  "@Edit Password": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Old Password": "كلمة المرور القديمة",
+  "@Old Password": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "New  Password": "كلمة المرور الجديدة",
+  "@New  Password": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Message Title": "عنوان الرسالة",
+  "@Message Title": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Message Description": "وصف الرسالة",
+  "@Message Description": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Text Validation": "يرجى إدخال نص معبر",
+  "@Text Validation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "OR": "أو",
+  "@OR": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Arabic": "العربية",
+  "@Arabic": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "English": "English",
+  "@English": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Want to logout ?": "هل تريد تسجيل الخروج؟",
+  "@Want to logout ?": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Ok": "موافق",
+  "@Ok": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Cancel": "إلغاء",
+  "@Cancel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Aouon Turaif": "afaq",
+  "@Aouon Turaif": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Baladia Turaif": "بلدية الطريف",
+  "@Turaif Baladia": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Search": "كلمة البحث...",
+  "@Search": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "No Results": "لاتوجد نتائج",
+  "@No Results": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "No Departments": "لاتوجد أقسام",
+  "@No Departments": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "SR": "ر.س",
+  "@SR": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Add To Cart": "إضافة للسلة",
+  "@Add To Cart": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Product Details": "تفاصيل المنتج",
+  "@Product Details": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "All Product Details": "جميع التفاصيل المتعلقة بالمنتج",
+  "@All Product Details": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "First Login": "يرجي تسجيل الدخول أولاً",
+  "@First Login": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Products No": "عدد المنتجات",
+  "@Products No": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Total Price": "اجمالي السعر",
+  "@Total Price": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Application Value": "جميع الأسعار تشمل تطبيق القيمة المضافة ( 5% )",
+  "@Total Price": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Complete Purchase": "إتمام الشراء",
+  "@Complete Purchase": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Purchase Request Has sent Successfully": "تم ارسال طلب الشراء بنجاح",
+  "@Purchase Request Has sent Successfully": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Amount": "الكمية",
+  "@Amount": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Waiting": "قيد الانتظار",
+  "@Waiting": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Processing": "قيد التنفيذ",
+  "@Processing": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Done": "تم التوصيل",
+  "@Done": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Canceled": "تم الالغاء",
+  "@Canceled": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Order Details": "تفاصيل الطلب",
+  "@Order Details": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Cancel Order": "الغاء الطلب",
+  "@Cancel Order": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Want To Cancel Order?": "هل تريد تأكيد الغاء الطلب ؟",
+  "@Want To Cancel Order?": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Order No": "رقم الطلب",
+  "@Order No": {
+    "type": "text",
+    "placeholders": {}
+  }, 
+  "Store": "المتجر",
+  "@Store": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Order Price": "إجمالي الطلب",
+  "@Order Price": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Order Date": "تاريخ الطلب",
+  "@Order Date": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Order Receipt Time": "وقت استلام الطلب",
+  "@Order Receipt Time": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Order Status": "حالة الطلب",
+  "@Order Status": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Edit Order": "تعديل الطلب",
+  "@Edit Order": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Save Changes": "حفظ التعديلات",
+  "@Save Changes": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Add New Product": "أضف منتج آخر",
+  "@Edit Order": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "AddToOrder": "أضف للطلب",
+  "@AddToOrder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "No Result Into Cart": "لاتوجد طلبات فى السلة",
+  "@No Result Into Cart": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Sorry": "Sorry",
+  "@Sorry": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "update screen": "تحديث الصفحة",
+  "@update screen": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "reconnect Internet": "أعد الاتصال بالشبكة",
+  "@reconnect Internet": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "scan Router": "إفحص جهاز الراوتر الخاص بك",
+  "@scan Router": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sorryNoInternet": "عفواً ... لايوجد اتصال بالإنترنت",
+  "@sorryNoInternet": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Notifications": "الإشعارات",
+  "@Notifications": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "activate Code": "كود التفعيل",
+  "@activate Code": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Activation": "تفعيل الحساب",
+  "@Activation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "From Store": "من قبل متجر",
+  "@From Store": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "No Notifications": "لاتوجد إشعارات",
+  "@No Notifications": {
+    "type": "text",
+    "placeholders": {}
+  }                                          
+}

@@ -1,0 +1,235 @@
+name: afaq
+description: A new Flutter application.
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as rawa8.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 2.0.6+12
+
+environment:
+  sdk: ">=3.8.0 <=4.0.0"
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl_translation: any
+  provider: ^6.0.5
+  shared_preferences: ^2.5.3
+  http: ^1.2.2
+  # device_preview: ^0.2.6
+  flutter_launcher_icons: ^0.14.2
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.5
+  font_awesome_flutter: ^10.3.0
+  pin_code_fields: any
+  badges: ^3.0.2
+  validators: ^3.0.0
+  toast: ^0.3.0
+  flutter_offline: ^4.0.0
+  firebase_messaging: ^15.2.9
+  flutter_local_notifications: 19.2.1
+  shimmer: ^3.0.0
+  flutter_spinkit: ^5.1.0
+  dio: ^5.7.0
+  flutter_svg: ^2.0.16
+  #circular_check_box: ^1.0.4
+  flutter_html: ^3.0.0-alpha.3
+  url_launcher: ^6.1.8
+  dots_indicator: ^3.0.0
+  carousel_slider: ^5.0.0
+  location: ^7.0.1
+  geolocator: ^13.0.2
+  geocoding: ^3.0.0
+  google_maps_flutter: ^2.2.3
+  flutter_rating_bar: any
+  image_picker: ^1.1.2
+  path: any
+  webview_flutter: any
+  gesture_zoom_box: ^0.0.4
+  pin_code_text_field: ^1.8.0
+  firebase_core: ^3.15.1
+  share_plus: ^11.0.0
+  permission_handler: any
+  webview_flutter_android: any
+  webview_flutter_wkwebview: ^3.7.2
+  string_to_color: ^2.0.0
+  smooth_star_rating_null_safety: ^1.0.4+2
+  my_fatoorah: ^3.2.0
+  dotted_line: ^3.2.2
+
+  change_app_package_name: ^1.5.0
+
+  intl: any
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+flutter_icons:
+  image_path_android: "assets/images/app_icon.png"
+  image_path_ios: "assets/images/app_icon.png"
+  android: true
+  ios: true
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/splash.png
+    - assets/images/app_icon.png
+    - assets/images/vision.png
+    - assets/images/flag.png
+    - assets/images/baldia.png
+    - assets/images/logo.png
+    - assets/images/mail.png
+    - assets/images/supermarket.png
+    - assets/images/white.png
+    - assets/images/wheatsm.png
+    - assets/images/check.png
+    - assets/images/facebook.png
+    - assets/images/linkedin.png
+    - assets/images/twitter.png
+    - assets/images/instagram.png
+    - assets/images/arabic.png
+    - assets/images/english.png
+    - assets/images/key.png
+    - assets/images/cancel.png
+    - assets/images/keyfull.png
+    - assets/images/call.png
+    - assets/images/warning.png
+    - assets/images/filter.png
+    - assets/images/box.png
+
+
+
+    - assets/images/back.png
+    - assets/images/checkAcount.png
+    - assets/images/sa.png
+    - assets/images/codeCheck.png
+    - assets/images/toplogo.png
+    - assets/images/topbg.png
+    - assets/images/topmap.png
+    - assets/images/topselect.png
+    - assets/images/bottomTop.png
+    - assets/images/addLocation.png
+    - assets/images/edit.png
+    - assets/images/delete.png
+    - assets/images/pin.png
+    - assets/images/search.png
+    - assets/images/star.png
+    - assets/images/km.png
+    - assets/images/time.png
+    - assets/images/tawsil.png
+    - assets/images/circle.png
+    - assets/images/back1.png
+    - assets/images/back2.png
+    - assets/images/rate.png
+    - assets/images/plus.png
+    - assets/images/plus1.png
+    - assets/images/minus.png
+    - assets/images/note.png
+    - assets/images/pay.png
+    - assets/images/selectvisa.png
+    - assets/images/selecthand.png
+    - assets/images/selectwallet.png
+    - assets/images/home.png
+    - assets/images/orders.png
+    - assets/images/offers.png
+    - assets/images/more.png
+    - assets/images/close.png
+    - assets/images/question.png
+    - assets/images/moto.png
+    - assets/images/step1.png
+    - assets/images/step2.png
+    - assets/images/step2G.png
+    - assets/images/step3.png
+    - assets/images/step3G.png
+    - assets/images/step4.png
+    - assets/images/step4G.png
+    - assets/images/step5.png
+    - assets/images/step5G.png
+    - assets/images/true.png
+    - assets/images/maps.png
+    - assets/images/popphone.png
+    - assets/images/nonCheck.png
+    - assets/images/actCheck.png
+    - assets/images/topDrawer.png
+    - assets/images/edit1.png
+    - assets/images/splash1.png
+
+
+    - assets/images/user.png
+    - assets/images/password.png
+    - assets/images/notifications.png
+    - assets/images/order.png
+    - assets/images/menu.png
+    - assets/images/bg.png
+    - assets/images/arrow.png
+    - assets/images/about.png
+    - assets/images/map.png
+    - assets/images/cash.png
+    - assets/images/visa.png
+    - assets/images/home.png
+    - assets/images/contact.png
+    - assets/images/cart.png
+    - assets/images/wallet.png
+    - assets/images/transfer.png
+    - assets/images/card.png
+    - assets/images/share.png
+    - assets/images/ccc.png
+    - assets/images/
+
+
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware.
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  fonts:
+    - family: segoeui
+      fonts:
+        - asset: assets/fonts/segoeui-regular.ttf
+          weight: 400
+        - asset: assets/fonts/segoeui-bold.ttf
+          weight: 700
+        - asset: assets/fonts/segoeui-semibold.ttf
+          weight: 500
+
+    - family: phone
+      fonts:
+        - asset: assets/fonts/icons/phone.ttf
+
+
+    - family: group
+      fonts:
+        - asset: assets/fonts/icons/group.ttf
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages

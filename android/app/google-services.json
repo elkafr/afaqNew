@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "461181839516",
+    "project_id": "afaq-739dd",
+    "storage_bucket": "afaq-739dd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:461181839516:android:4d1ed9ca12351209182559",
+        "android_client_info": {
+          "package_name": "com.omar.afaq"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB32ejLJVrweQl_53y0P0QIOlhkAkqbgKw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:461181839516:android:274b184568d19c86182559",
+        "android_client_info": {
+          "package_name": "com.omar.afaq.afaq"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB32ejLJVrweQl_53y0P0QIOlhkAkqbgKw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

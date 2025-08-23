@@ -1,0 +1,518 @@
+{
+  "@@last_modified": "2020-04-17T11:16:07.171822",
+  "Language Symbol": "Language Symbol",
+  "@Language Symbol": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Our Vision": "Our Vision",
+  "@Our Vision": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Next": "Next",
+  "@Next": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Previous": "Previous",
+  "@Previous": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Finish": "Finish",
+  "@Finish": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Login": "Login",
+  "@Login": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Email": "Email",
+  "@Email": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Password": "Password",
+  "@Password": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Forget Password": "Forget Password",
+  "@Forget Password": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Click Here": "Click Here",
+  "@Click Here": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Has Account": "Has Account",
+  "@Has Account": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Register": "Register",
+  "@Register": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Skip": "Skip",
+  "@Skip": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Phone No Validation": "Phone No Validation",
+  "@Phone No Validation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Email Validation": "Email Validation",
+  "@Email Validation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Password Validation": "Password Validation",
+  "@Password Validation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Name": "Name",
+  "@Name": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Name Validation": "Name Validation",
+  "@Name Validation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Password Verify": "Password Verify",
+  "@Password Verify": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Password Verify Validation": "Password Verify Validation",
+  "@Password Verify Validation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Password Not Identical": "Password Not Identical",
+  "@Password Not Identical": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Phone No": "Phone No",
+  "@Phone No": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "I Accept": "I Accept",
+  "@I Accept": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Terms": "Terms",
+  "@Terms": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Send Message To Mobile": "Send Message To Mobile",
+  "@Send Message To Mobile": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Save": "Save",
+  "@Save": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Send": "Send",
+  "@Send": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Accept Terms": "Accept Terms",
+  "@Accept Terms": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Code To Restore Password": "Code To Restore Password",
+  "@Code To Restore Password": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Enter Code To Restore Password": "Enter Code To Restore Password",
+  "@Enter Code To Restore Password": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Restore Password": "Restore Password",
+  "@Restore Password": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Confirm New Password": "Confirm New Password",
+  "@Confirm New Password": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Account Activation Code": "Account Activation Code",
+  "@Account Activation Code": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Enter Code To Activate Account": "Enter Code To Activate Account",
+  "@Enter Code To Activate Account": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Confirmation Of Activation": "Confirmation Of Activation",
+  "@Confirmation Of Activation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Home": "Home",
+  "@Home": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Odrers": "Odrers",
+  "@Odrers": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Favourite": "Favourite",
+  "@Favourite": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Cart": "Cart",
+  "@Cart": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Account": "Account",
+  "@Account": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Personal Info": "Personal Info",
+  "@Personal Info": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "About": "About",
+  "@About": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Contact Us": "Contact Us",
+  "@Contact Us": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Language": "Language",
+  "@Language": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Log out": "Log out",
+  "@Log out": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Enter": "Enter",
+  "@Enter": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Edit Info": "Edit Info",
+  "@Edit Info": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Edit Password": "Edit Password",
+  "@Edit Password": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Old Password": "Old Password",
+  "@Old Password": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "New  Password": "New  Password",
+  "@New  Password": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Message Title": "Message Title",
+  "@Message Title": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Message Description": "Message Description",
+  "@Message Description": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Text Validation": "Text Validation",
+  "@Text Validation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Or": "Or",
+  "@Or": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Arabic": "Arabic",
+  "@Arabic": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "English": "English",
+  "@English": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Want to logout ?": "Want to logout ?",
+  "@Want to logout ?": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Ok": "Ok",
+  "@Ok": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Cancel": "Cancel",
+  "@Cancel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Baladia Turaif": "Baladia Turaif",
+  "@Baladia Turaif": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Aouon Turaif": "Aouon Turaif",
+  "@Aouon Turaif": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Search": "Search",
+  "@Search": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "No Results": "No Results",
+  "@No Results": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "No Departments": "No Departments",
+  "@No Departments": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "SR": "SR",
+  "@SR": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Add To Cart": "Add To Cart",
+  "@Add To Cart": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Product Details": "Product Details",
+  "@Product Details": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "All Product Details": "All Product Details",
+  "@All Product Details": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "First Login": "First Login",
+  "@First Login": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Products No": "Products No",
+  "@Products No": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Total Price": "Total Price",
+  "@Total Price": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Application Value": "Application Value",
+  "@Application Value": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Complete Purchase": "Complete Purchase",
+  "@Complete Purchase": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Amount": "Amount",
+  "@Amount": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Purchase Request Has sent Successfully": "Purchase Request Has sent Successfully",
+  "@Purchase Request Has sent Successfully": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Waiting": "Waiting",
+  "@Waiting": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Processing": "Processing",
+  "@Processing": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Done": "Done",
+  "@Done": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Canceled": "Canceled",
+  "@Canceled": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Order Details": "Order Details",
+  "@Order Details": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Cancel Order": "Cancel Order",
+  "@Cancel Order": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Want To Cancel Order?": "Want To Cancel Order?",
+  "@Want To Cancel Order?": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Order No": "Order No",
+  "@Order No": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Store": "Store",
+  "@Store": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Order Price": "Order Price",
+  "@Order Price": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Order Date": "Order Date",
+  "@Order Date": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Order Receipt Time": "Order Receipt Time",
+  "@Order Receipt Time": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Order Status": "Order Status",
+  "@Order Status": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Edit Order": "Edit Order",
+  "@Edit Order": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Save Changes": "Save Changes",
+  "@Save Changes": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Add New Product": "Add New Product",
+  "@Add New Product": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "AddToOrder": "AddToOrder",
+  "@AddToOrder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "No Result Into Cart": "No Result Into Cart",
+  "@No Result Into Cart": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Sorry": "Sorry",
+  "@Sorry": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "update screen": "update screen",
+  "@update screen": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "reconnect Internet": "reconnect Internet",
+  "@reconnect Internet": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "scan Router": "scan Router",
+  "@scan Router": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sorryNoInternet": "sorryNoInternet",
+  "@sorryNoInternet": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Notifications": "Notifications",
+  "@Notifications": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "activate Code": "activate Code",
+  "@activate Code": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Activation": "Activation",
+  "@Activation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "From Store": "From Store",
+  "@From Store": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "No Notifications": "No Notifications",
+  "@No Notifications": {
+    "type": "text",
+    "placeholders": {}
+  }
+}
