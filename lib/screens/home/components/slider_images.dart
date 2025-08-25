@@ -14,9 +14,7 @@ class SliderImages extends StatefulWidget {
 }
 
 class _SliderImagesState extends State<SliderImages> {
-  // int _currentPageValue = 0;
-  // int _previousPageValue = 0;
-  // PageController _controller;
+
   Services _services = Services();
   bool _initialRun = true;
 
@@ -62,65 +60,14 @@ class _SliderImagesState extends State<SliderImages> {
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           return CarouselWithIndicator(imgList: snapshot.data!);
-          // return Stack(
-          //   alignment: AlignmentDirectional.bottomCenter,
-          //   children: <Widget>[
-          //     PageView.builder(
-          //       physics: ClampingScrollPhysics(),
-          //       itemCount: snapshot.data.length,
-          //       onPageChanged: (int page) {
-          //         getChangedPageAndMoveBar(page);
-          //       },
-          //       controller: _controller,
-          //       itemBuilder: (context, index) {
-          //         return Column(
-          //           children: <Widget>[
-          //             Container(
-          //               margin: EdgeInsets.symmetric(
-          //                   horizontal:
-          //                       MediaQuery.of(context).size.width * 0.02),
-          //               decoration: BoxDecoration(
-          //                 borderRadius: BorderRadius.all(
-          //                   const Radius.circular(10.00),
-          //                 ),
-          //               ),
-          //               child: Center(
-          //                 child: Image.network(
-          //                   snapshot.data[index].photo,
-          //                   fit: BoxFit.cover,
-          //                 ),
-          //               ),
-          //             ),
-          //             Container(
-          //                 margin: EdgeInsets.only(top: 5),
-          //                 child: DotsIndicator(
-          //                   dotsCount: snapshot.data.length,
-          //                   position: _currentPageValue.toDouble(),
-          //                   decorator: DotsDecorator(
-          //                     size: const Size(24.0, 5.0),
-          //                     shape: RoundedRectangleBorder(
-          //                         borderRadius:
-          //                             BorderRadius.circular(3.0)),
-          //                     activeSize: const Size(24.0, 5.0),
-          //                     activeColor: cAccentColor,
-          //                     color: Color(0xffEEEEEE),
-          //                     activeShape: RoundedRectangleBorder(
-          //                       borderRadius: BorderRadius.circular(3.0),
-          //                     ),
-          //                   ),
-          //                 )),
-          //           ],
-          //         );
-          //       },
-          //     ),
-          //   ],
-          // );
         } else if (snapshot.hasError) {
           return Text("${snapshot.error}");
         }
-
-        return Center(
-          child: SpinKitSquareCircle(color: cPrimaryColor, size: 25),
+        return Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Center(
+            child: SpinKitSquareCircle(color: cPrimaryColor, size: 25),
+          ),
         );
       },
     );

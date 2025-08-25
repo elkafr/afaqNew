@@ -48,7 +48,7 @@ class _CartScreenState extends State<CartScreen> {
 
   Future<List<Cart>> _getCartList() async {
     Map<dynamic, dynamic> results = await _services.get(
-      '${Utils.SHOW_CART_URL}${_appState!.currentUser!.userId}&lang=${_appState!.currentLang}',
+      '${Utils.SHOW_CART_URL}${_appState?.currentUser?.userId}&lang=${_appState?.currentLang}',
     );
 
     print("carts>>>>>>>>>" + results.toString());
@@ -60,7 +60,7 @@ class _CartScreenState extends State<CartScreen> {
         _totalCost = 0;
         for (int i = 0; i < cartList.length; i++) {
           _totalCost +=
-              (double.parse(cartList[i].price!) * cartList[i].cartAmount!);
+              (double.parse(cartList[i].price??"0") * (cartList[i].cartAmount??0));
         }
       }
     } else {
@@ -74,10 +74,10 @@ class _CartScreenState extends State<CartScreen> {
     String? phone,
     String? address,
   }) {
-    if (phone!.trim().length == 0 || !isNumeric(phone)) {
+    if (phone?.trim().length == 0 || !isNumeric(phone??"0")) {
       showToast(context, message: "ادخل رقم الهاتف");
       return false;
-    } else if (phone.trim().length < 10 || (phone.trim().length > 10)) {
+    } else if ((phone?.trim().length??0) < 10 || ((phone?.trim().length??0 )> 10)) {
       showToast(context, message: "رقم الهاتف يجب ان يكون 10 ارقام");
       return false;
     } else if (address == "فضلا ادخل اللوكيشن" || address == null) {
@@ -89,30 +89,26 @@ class _CartScreenState extends State<CartScreen> {
   }
 
   Future<void> _getCurrentUserLocation() async {
-    _progressIndicatorState!.setIsLoading(true);
+    _progressIndicatorState?.setIsLoading(true);
     _locData = await gg.Location().getLocation();
-    print(_locData!.latitude);
-    print(_locData!.longitude);
+    print(_locData?.latitude);
+    print(_locData?.longitude);
 
-    if (_locData != null) {
-      _locationState!.setLocationLatitude(_locData!.latitude!);
-      _locationState!.setLocationlongitude(_locData!.longitude!);
+    if (_locData!= null) {
+      _locationState?.setLocationLatitude((_locData?.latitude??0));
+      _locationState?.setLocationlongitude((_locData?.longitude??0));
       List<Placemark> placemark = await placemarkFromCoordinates(
-        _locationState!.locationLatitude,
-        _locationState!.locationlongitude,
+        _locationState?.locationLatitude??0,
+        _locationState?.locationlongitude??0,
       );
-      _locationState!.setCurrentAddress(
-        placemark[0].name! +
-            '  ' +
-            placemark[0].administrativeArea! +
-            ' ' +
-            placemark[0].country!,
+      _locationState?.setCurrentAddress(
+        (placemark[0].name??"") +'  ' + (placemark[0].administrativeArea??"") +' ' + (placemark[0].country??"")
       );
       //  final coordinates = new Coordinates(_locationState.locationLatitude, _locationState
       //  .locationlongitude);
       // var addresses = await Geocoder.local.findAddressesFromCoordinates(coordinates);
       // var first = addresses.first;
-      _progressIndicatorState!.setIsLoading(false);
+      _progressIndicatorState?.setIsLoading(false);
       // _locationState.setCurrentAddress(first.addressLine);
 
       // print("${first.featureName} : ${first.addressLine}");
@@ -125,8 +121,8 @@ class _CartScreenState extends State<CartScreen> {
       _appState = Provider.of<AppState>(context);
       _locationState = Provider.of<LocationState>(context);
       _cartList = _getCartList();
-      _locationState!.initCurrentAddress("فضلا ادخل اللوكيشن");
-      _appState!.setCheckedValue("1");
+      _locationState?.initCurrentAddress("فضلا ادخل اللوكيشن");
+       _appState?.setCheckedValue("1");
       _initialRun = false;
     }
     super.didChangeDependencies();
@@ -156,7 +152,7 @@ class _CartScreenState extends State<CartScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                cart.title!,
+                cart.title??"",
                 style: TextStyle(
                   color: cBlack,
                   fontSize: 16,
@@ -176,17 +172,17 @@ class _CartScreenState extends State<CartScreen> {
                   GestureDetector(
                     onTap: () async {
                       setState(() {
-                        //  cart.cartAmount=int.parse(cart.cartAmount!)+1;
-                        _totalCost += double.parse(cart.price!);
+                        //  cart.cartAmount=int.parse(cart.cartAmount?)+1;
+                        _totalCost += double.parse(cart.price??"0");
                       });
                       print('NUMBER: ${cart.cartAmount}');
                       print('NUMBER: ${cart.cartId}');
 
-                      _progressIndicatorState!.setIsLoading(true);
+                      _progressIndicatorState?.setIsLoading(true);
                       var results = await _services.get(
                         "${Utils.UPDATE_AMOUNT_URL}cart_amount=${cart.cartAmount}&cart_id=${cart.cartId}",
                       );
-                      _progressIndicatorState!.setIsLoading(false);
+                      _progressIndicatorState?.setIsLoading(false);
                       if (results['response'] == '1') {
                         showToast(context, message: results['message']);
                         _cartList = _getCartList();
@@ -219,19 +215,19 @@ class _CartScreenState extends State<CartScreen> {
                   ),
                   GestureDetector(
                     onTap: () async {
-                      if (cart.cartAmount! > 1) {
+                      if ((cart.cartAmount??0) > 1) {
                         setState(() {
-                          //  int.parse(cart.cartAmount!--);
-                          _totalCost -= double.parse(cart.price!);
+                          //  int.parse(cart.cartAmount?--);
+                          _totalCost -= double.parse(cart.price??"0");
                         });
 
                         print('NUMBER: ${cart.cartAmount}');
 
-                        _progressIndicatorState!.setIsLoading(true);
+                        _progressIndicatorState?.setIsLoading(true);
                         var results = await _services.get(
                           "${Utils.UPDATE_AMOUNT_URL1}cart_amount=${cart.cartAmount}&cart_id=${cart.cartId}",
                         );
-                        _progressIndicatorState!.setIsLoading(false);
+                        _progressIndicatorState?.setIsLoading(false);
                         if (results['response'] == '1') {
                           showToast(context, message: results['message']);
                           _cartList = _getCartList();
@@ -256,7 +252,7 @@ class _CartScreenState extends State<CartScreen> {
               CircleAvatar(
                 backgroundColor: cPrimaryColor,
                 radius: 24,
-                backgroundImage: NetworkImage(cart.adsMtgerPhoto!),
+                backgroundImage: NetworkImage(cart.adsMtgerPhoto??""),
               ),
               Container(
                 margin: EdgeInsets.symmetric(vertical: 5),
@@ -270,7 +266,7 @@ class _CartScreenState extends State<CartScreen> {
                     ),
                     children: <TextSpan>[
                       TextSpan(
-                        text: (double.parse(cart.price!) * cart.cartAmount!)
+                        text: (double.parse(cart.price??"0") * (cart.cartAmount??0))
                             .toStringAsFixed(2),
                       ),
                       TextSpan(text: '  '),
@@ -289,11 +285,11 @@ class _CartScreenState extends State<CartScreen> {
               ),
               GestureDetector(
                 onTap: () async {
-                  _progressIndicatorState!.setIsLoading(true);
+                  _progressIndicatorState?.setIsLoading(true);
                   var results = await _services.get(
-                    '${Utils.DELETE_FROM_CART_URL}user_id=${_appState!.currentUser!.userId}&cart_id=${cart.cartId}&lang=${_appState!.currentLang}',
+                    '${Utils.DELETE_FROM_CART_URL}user_id=${_appState?.currentUser?.userId}&cart_id=${cart.cartId}&lang=${_appState?.currentLang}',
                   );
-                  _progressIndicatorState!.setIsLoading(false);
+                  _progressIndicatorState?.setIsLoading(false);
                   if (results['response'] == '1') {
                     showToast(context, message: results['message']);
                     _cartList = _getCartList();
@@ -334,14 +330,14 @@ class _CartScreenState extends State<CartScreen> {
       future: _cartList,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          if (snapshot.data!.length > 0) {
+          if ((snapshot.data?.length??0)> 0) {
             return ListView(
               children: <Widget>[
                 Container(
                   height: _height * 0.55,
                   padding: EdgeInsets.only(top: 10),
                   child: ListView.builder(
-                    itemCount: snapshot.data!.length,
+                    itemCount: snapshot.data?.length??0,
                     itemBuilder: (context, index) {
                       return _buildCartItem(snapshot.data![index]);
                     },
@@ -395,7 +391,7 @@ class _CartScreenState extends State<CartScreen> {
                         width: _width * 0.6,
                         margin: EdgeInsets.symmetric(horizontal: 10),
                         child: Text(
-                          _locationState!.address,
+                          _locationState?.address??"",
                           maxLines: 2,
                           style: TextStyle(
                             fontSize: 14,
@@ -422,7 +418,7 @@ class _CartScreenState extends State<CartScreen> {
                 ),
                 Padding(padding: EdgeInsets.all(10)),
                 TitleItem(title: "الوقت المناسب للتوصيل"),
-                if (isTimeBefore(int.parse(_appState!.f1to)))
+                if (isTimeBefore(int.parse(_appState?.f1to??"0")))
                   Container(
                     margin: EdgeInsets.only(
                       right: _width * .08,
@@ -432,15 +428,15 @@ class _CartScreenState extends State<CartScreen> {
                     alignment: Alignment.centerRight,
                     child: Row(
                       children: <Widget>[
-                        Text(_appState!.f1),
+                        Text(_appState?.f1??""),
                         Spacer(),
-                        _appState!.checkedValue == "1"
+                        _appState?.checkedValue == "1"
                             ? GestureDetector(
                                 onTap: () {
                                   setState(() {
-                                    _progressIndicatorState!.setIsLoading(true);
-                                    //_appState!.setCheckedValue(null);
-                                    _progressIndicatorState!.setIsLoading(
+                                    _progressIndicatorState?.setIsLoading(true);
+                                    //_appState?.setCheckedValue(null);
+                                    _progressIndicatorState?.setIsLoading(
                                       false,
                                     );
                                   });
@@ -454,10 +450,10 @@ class _CartScreenState extends State<CartScreen> {
                             : GestureDetector(
                                 onTap: () {
                                   setState(() {
-                                    _progressIndicatorState!.setIsLoading(true);
-                                    _appState!.setCheckedValue("1");
-                                    print(_appState!.checkedValue);
-                                    _progressIndicatorState!.setIsLoading(
+                                    _progressIndicatorState?.setIsLoading(true);
+                                    _appState?.setCheckedValue("1");
+                                    print(_appState?.checkedValue);
+                                    _progressIndicatorState?.setIsLoading(
                                       false,
                                     );
                                   });
@@ -471,7 +467,7 @@ class _CartScreenState extends State<CartScreen> {
                       ],
                     ),
                   ),
-                if (isTimeBefore(int.parse(_appState!.f2to)))
+                if (isTimeBefore(int.parse(_appState?.f2to??"0")))
                   Container(
                     margin: EdgeInsets.only(
                       right: _width * .08,
@@ -481,15 +477,15 @@ class _CartScreenState extends State<CartScreen> {
                     alignment: Alignment.centerRight,
                     child: Row(
                       children: <Widget>[
-                        Text(_appState!.f2),
+                        Text(_appState?.f2??""),
                         Spacer(),
-                        _appState!.checkedValue == "2"
+                        _appState?.checkedValue == "2"
                             ? GestureDetector(
                                 onTap: () {
                                   setState(() {
-                                    _progressIndicatorState!.setIsLoading(true);
-                                    //  _appState!.setCheckedValue(null);
-                                    _progressIndicatorState!.setIsLoading(
+                                    _progressIndicatorState?.setIsLoading(true);
+                                    //  _appState?.setCheckedValue(null);
+                                    _progressIndicatorState?.setIsLoading(
                                       false,
                                     );
                                   });
@@ -503,10 +499,10 @@ class _CartScreenState extends State<CartScreen> {
                             : GestureDetector(
                                 onTap: () {
                                   setState(() {
-                                    _progressIndicatorState!.setIsLoading(true);
-                                    _appState!.setCheckedValue("2");
-                                    print(_appState!.checkedValue);
-                                    _progressIndicatorState!.setIsLoading(
+                                    _progressIndicatorState?.setIsLoading(true);
+                                    _appState?.setCheckedValue("2");
+                                    print(_appState?.checkedValue);
+                                    _progressIndicatorState?.setIsLoading(
                                       false,
                                     );
                                   });
@@ -520,7 +516,7 @@ class _CartScreenState extends State<CartScreen> {
                       ],
                     ),
                   ),
-                if (isTimeBefore(int.parse(_appState!.f3to)))
+                if (isTimeBefore(int.parse(_appState?.f3to??"")))
                   Container(
                     margin: EdgeInsets.only(
                       right: _width * .08,
@@ -530,15 +526,15 @@ class _CartScreenState extends State<CartScreen> {
                     alignment: Alignment.centerRight,
                     child: Row(
                       children: <Widget>[
-                        Text(_appState!.f3),
+                        Text(_appState?.f3??""),
                         Spacer(),
-                        _appState!.checkedValue == "3"
+                        _appState?.checkedValue == "3"
                             ? GestureDetector(
                                 onTap: () {
                                   setState(() {
-                                    _progressIndicatorState!.setIsLoading(true);
-                                    //  _appState!.setCheckedValue(null);
-                                    _progressIndicatorState!.setIsLoading(
+                                    _progressIndicatorState?.setIsLoading(true);
+                                    //  _appState?.setCheckedValue(null);
+                                    _progressIndicatorState?.setIsLoading(
                                       false,
                                     );
                                   });
@@ -552,11 +548,11 @@ class _CartScreenState extends State<CartScreen> {
                             : GestureDetector(
                                 onTap: () {
                                   setState(() {
-                                    _progressIndicatorState!.setIsLoading(true);
+                                    _progressIndicatorState?.setIsLoading(true);
                                     checkedValue = true;
-                                    _appState!.setCheckedValue("3");
-                                    print(_appState!.checkedValue);
-                                    _progressIndicatorState!.setIsLoading(
+                                    _appState?.setCheckedValue("3");
+                                    print(_appState?.checkedValue);
+                                    _progressIndicatorState?.setIsLoading(
                                       false,
                                     );
                                   });
@@ -600,7 +596,7 @@ class _CartScreenState extends State<CartScreen> {
                               margin: EdgeInsets.only(left: 10),
                               padding: EdgeInsets.all(5),
                               child: Text(
-                                _appState!.currentLang == "ar"
+                                _appState?.currentLang == "ar"
                                     ? "قيمة الطلبات : "
                                     : "value of orders : ",
                                 style: TextStyle(
@@ -651,7 +647,7 @@ class _CartScreenState extends State<CartScreen> {
                               margin: EdgeInsets.only(left: 10),
                               padding: EdgeInsets.all(5),
                               child: Text(
-                                _appState!.currentLang == "ar"
+                                _appState?.currentLang == "ar"
                                     ? "سعر التوصيل :"
                                     : "Delivery price :",
                                 style: TextStyle(
@@ -671,7 +667,7 @@ class _CartScreenState extends State<CartScreen> {
                                 ),
                                 children: <TextSpan>[
                                   TextSpan(
-                                    text: _appState!.currentTawsil.toString(),
+                                    text: _appState?.currentTawsil.toString(),
                                   ),
                                   TextSpan(
                                     text: " ريال ",
@@ -722,7 +718,7 @@ class _CartScreenState extends State<CartScreen> {
                                 children: <TextSpan>[
                                   TextSpan(
                                     text:
-                                        (_totalCost + _appState!.currentTawsil)
+                                        (_totalCost + (_appState?.currentTawsil??0))
                                             .toStringAsFixed(2),
                                   ),
                                   TextSpan(
@@ -750,7 +746,7 @@ class _CartScreenState extends State<CartScreen> {
                                 value: _isAgree,
                                 onChanged: (value) {
                                   setState(() {
-                                    _isAgree = value!;
+                                    _isAgree = value??false;
                                   });
                                 },
                               );
@@ -769,26 +765,26 @@ class _CartScreenState extends State<CartScreen> {
                             if (_checkValidation(
                               context,
                               phone: _userPhone,
-                              address: _locationState!.address,
+                              address: _locationState?.address,
                             )) {
-                              _appState!.setUserPhone(_userPhone);
+                              _appState?.setUserPhone(_userPhone);
                               // Navigator.pushNamed(context,  '/payment_screen');
-                              _appState!.setCurrentTotal(_totalCost);
+                              _appState?.setCurrentTotal(_totalCost);
 
                               if (_totalCost <
-                                  int.parse(_appState!.requestMin!)) {
+                                  int.parse(_appState?.requestMin??"0")) {
                                 showErrorDialog(
                                   "الحد الادنى للطلب هو : " +
-                                      _appState!.requestMin! +
+                                      (_appState?.requestMin??"") +
                                       " ريال ",
                                   context,
                                 );
                               } else {
-                                _progressIndicatorState!.setIsLoading(true);
+                                _progressIndicatorState?.setIsLoading(true);
                                 var results = await _services.get(
-                                  'https://mahtco.net/app/api/checkDistance?latitudeFrom=${_locationState!.locationLatitude}&longitudeFrom=${_locationState!.locationlongitude}',
+                                  'https://mahtco.net/app/api/checkDistance?latitudeFrom=${_locationState?.locationLatitude}&longitudeFrom=${_locationState?.locationlongitude}',
                                 );
-                                _progressIndicatorState!.setIsLoading(false);
+                                _progressIndicatorState?.setIsLoading(false);
                                 if (results['response'] == '1') {
                                   if (results['distance'] < results['allow']) {
                                     Navigator.push(
@@ -809,7 +805,7 @@ class _CartScreenState extends State<CartScreen> {
                               }
                             }
                           } else {
-                            showErrorDialog(_appState!.cartText, context);
+                            showErrorDialog(_appState?.cartText, context);
                           }
                         },
                         child: Container(
@@ -860,8 +856,7 @@ class _CartScreenState extends State<CartScreen> {
       leading: Text(""),
       title: Text("سلة الشراء", style: TextStyle(color: cWhite, fontSize: 16)),
     );
-    _height =
-        MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top;
+    _height = MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top;
     _width = MediaQuery.of(context).size.width;
     _progressIndicatorState = Provider.of<ProgressIndicatorState>(context);
     // _paymentState = Provider.of<PaymentState>(context);
@@ -873,7 +868,7 @@ class _CartScreenState extends State<CartScreen> {
             children: <Widget>[
               Consumer<AppState>(
                 builder: (context, appState, child) {
-                  return appState.currentUser != null
+                  return (appState.currentUser)!= null
                       ? _buildBodyItem()
                       : NotRegistered();
                 },

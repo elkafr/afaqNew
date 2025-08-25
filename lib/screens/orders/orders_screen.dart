@@ -54,19 +54,19 @@ class _OrdersScreenState extends State<OrdersScreen> {
     final appBar = AppBar(
       backgroundColor: cPrimaryColor,
       centerTitle: true,
-      leading: Text(""),
+   //   leading: Text(""),
       title: Text("طلباتي", style: TextStyle(color: cWhite, fontSize: 15)),
     );
-    _height =
-        MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top;
-    _width = MediaQuery.of(context).size.width;
-    final tabState = Provider.of<TabState>(context);
-    tabState.upadateInitialIndex(0);
+    // _height =
+    //     MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top;
+    // _width = MediaQuery.of(context).size.width;
+    // final tabState = Provider.of<TabState>(context);
+    // tabState.upadateInitialIndex(0);
 
     return NetworkIndicator(
       child: PageContainer(
         child: DefaultTabController(
-          initialIndex: tabState.initialIndex,
+          initialIndex:0,
           length: 2,
           child: Scaffold(
             appBar: appBar,

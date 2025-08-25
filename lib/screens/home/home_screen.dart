@@ -509,66 +509,63 @@ class _HomeScreenState extends State<HomeScreen> with ValidationMixin {
     }).toList();
     return ListView(
       children: <Widget>[
-        Container(child: SliderImages()),
-
+        SliderImages(),
         SizedBox(height: _width * .01),
         Container(
           padding: EdgeInsets.symmetric(horizontal: 10),
           height: 50,
-          decoration: BoxDecoration(color: Color(0xffF9F9F9), boxShadow: []),
-          child: Container(
-            margin: EdgeInsets.symmetric(vertical: 5),
-            decoration: BoxDecoration(
-              color: Color(0xffF9F9F9),
-              borderRadius: BorderRadius.circular(23.0),
+          // decoration: BoxDecoration(color: Color(0xffF9F9F9), boxShadow: []),
+          margin: EdgeInsets.symmetric(vertical: 5),
+          decoration: BoxDecoration(
+            color: Color(0xffF9F9F9),
+            borderRadius: BorderRadius.circular(23.0),
+          ),
+          child: TextFormField(
+            cursorColor: Color(0xffC5C5C5),
+            maxLines: 1,
+            onChanged: (text) {
+              setState(() {
+                _sValue = text;
+              });
+            },
+
+            style: TextStyle(
+              color: cBlack,
+              fontSize: 15,
+              fontWeight: FontWeight.w400,
             ),
-            child: TextFormField(
-              cursorColor: Color(0xffC5C5C5),
-              maxLines: 1,
-              onChanged: (text) {
-                setState(() {
-                  _sValue = text;
-                });
-              },
-
-              style: TextStyle(
-                color: cBlack,
-                fontSize: 15,
-                fontWeight: FontWeight.w400,
+            decoration: InputDecoration(
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(23.0),
+                borderSide: BorderSide(color: Color(0xffF9F9F9)),
               ),
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(23.0),
-                  borderSide: BorderSide(color: Color(0xffF9F9F9)),
-                ),
-                focusColor: Color(0xffC5C5C5),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Color(0xffC5C5C5)),
-                  borderRadius: BorderRadius.circular(25.7),
-                ),
-                contentPadding: EdgeInsets.symmetric(horizontal: 12.0),
-                suffixIcon: IconButton(
-                  icon: Icon(Icons.search, color: cLightRed),
-                  onPressed: () {
-                    if (_sValue != null) {
-                      _appState!.setSearchValue(_sValue);
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => SearchScreen()),
-                      );
-                    } else {
-                      showToast(context, message: "يجب ادخال كلمة للبحث");
-                    }
-                  },
-                ),
+              focusColor: Color(0xffC5C5C5),
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Color(0xffC5C5C5)),
+                borderRadius: BorderRadius.circular(25.7),
+              ),
+              contentPadding: EdgeInsets.symmetric(horizontal: 12.0),
+              suffixIcon: IconButton(
+                icon: Icon(Icons.search, color: cLightRed),
+                onPressed: () {
+                  if (_sValue != null) {
+                    _appState!.setSearchValue(_sValue);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SearchScreen()),
+                    );
+                  } else {
+                    showToast(context, message: "يجب ادخال كلمة للبحث");
+                  }
+                },
+              ),
 
-                hintText: AppLocalizations.of(context)!.search,
-                errorStyle: TextStyle(fontSize: 12.0),
-                hintStyle: TextStyle(
-                  color: Color(0xffC5C5C5),
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                ),
+              hintText: AppLocalizations.of(context)!.search,
+              errorStyle: TextStyle(fontSize: 12.0),
+              hintStyle: TextStyle(
+                color: Color(0xffC5C5C5),
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
               ),
             ),
           ),
@@ -615,9 +612,9 @@ class _HomeScreenState extends State<HomeScreen> with ValidationMixin {
                               //   print(_appState!.selectedSub!.mtgerCatId!);
                               setState(() {
                                 for (
-                                  int i = 0;
-                                  i < snapshot.data!.length;
-                                  i++
+                                int i = 0;
+                                i < snapshot.data!.length;
+                                i++
                                 ) {
                                   snapshot.data![i].isSelected = false;
                                 }
@@ -705,55 +702,57 @@ class _HomeScreenState extends State<HomeScreen> with ValidationMixin {
               ),
             ],
           ),
-          child: Row(
-            children: [
-              Image.asset("assets/images/circle.png"),
-              Padding(padding: EdgeInsets.all(3)),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                Image.asset("assets/images/circle.png"),
+                Padding(padding: EdgeInsets.all(3)),
+                Text(" الحد الأدني للطلب  :  ", style: TextStyle(fontSize: 13)),
+                FutureBuilder<String>(
+                  future: _RequestMin,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return Text(
+                        snapshot.data.toString(),
+                        style: TextStyle(fontSize: 13, color: cText),
+                      );
+                    } else if (snapshot.hasError) {
+                      return Text("${snapshot.error}");
+                    }
 
-              Text(" الحد الأدني للطلب  :  ", style: TextStyle(fontSize: 13)),
-              FutureBuilder<String>(
-                future: _RequestMin,
-                builder: (context, snapshot) {
-                  if (snapshot.hasData) {
-                    return Text(
-                      snapshot.data.toString(),
-                      style: TextStyle(fontSize: 13, color: cText),
+                    return Center(
+                      child: SpinKitThreeBounce(color: cPrimaryColor, size: 40),
                     );
-                  } else if (snapshot.hasError) {
-                    return Text("${snapshot.error}");
-                  }
+                  },
+                ),
+                Text(" ريال ", style: TextStyle(fontSize: 13)),
+                SizedBox(width:  _width * .04,),
+             //   Spacer(),
+                Image.asset("assets/images/tawsil.png"),
+                Padding(padding: EdgeInsets.all(3)),
+                Text("التوصيل : ", style: TextStyle(fontSize: 13)),
+                FutureBuilder<String>(
+                  future: _Tawsilfees,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      _appState!.setCurrentTawsil(int.parse(snapshot.data!));
+                      return Text(
+                        snapshot.data.toString(),
+                        style: TextStyle(fontSize: 13, color: cText),
+                      );
+                    } else if (snapshot.hasError) {
+                      return Text("${snapshot.error}");
+                    }
 
-                  return Center(
-                    child: SpinKitThreeBounce(color: cPrimaryColor, size: 40),
-                  );
-                },
-              ),
-
-              Text(" ريال ", style: TextStyle(fontSize: 13)),
-              Spacer(),
-              Image.asset("assets/images/tawsil.png"),
-              Padding(padding: EdgeInsets.all(3)),
-              Text("التوصيل : ", style: TextStyle(fontSize: 13)),
-              FutureBuilder<String>(
-                future: _Tawsilfees,
-                builder: (context, snapshot) {
-                  if (snapshot.hasData) {
-                    _appState!.setCurrentTawsil(int.parse(snapshot.data!));
-                    return Text(
-                      snapshot.data.toString(),
-                      style: TextStyle(fontSize: 13, color: cText),
+                    return Center(
+                      child: SpinKitThreeBounce(color: cPrimaryColor, size: 40),
                     );
-                  } else if (snapshot.hasError) {
-                    return Text("${snapshot.error}");
-                  }
-
-                  return Center(
-                    child: SpinKitThreeBounce(color: cPrimaryColor, size: 40),
-                  );
-                },
-              ),
-              Text(" ريال ", style: TextStyle(fontSize: 13)),
-            ],
+                  },
+                ),
+                Text(" ريال ", style: TextStyle(fontSize: 13)),
+              ],
+            ),
           ),
         ),
       ],

@@ -272,7 +272,7 @@ class AppState extends ChangeNotifier {
 
   void setCheckedValue(String? checkedValue) {
     _checkedValue = checkedValue;
-    notifyListeners();
+  //  notifyListeners();
   }
 
   String get checkedValue => _checkedValue!;

@@ -95,11 +95,11 @@ class _AccountScreenState extends State<AccountScreen> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     if (_initialRun) {
-      _initialRun = false;
-      _appState = Provider.of<AppState>(context);
-      _getUserCredit();
-      _getUserReq();
-      _getUserReqs();
+       _initialRun = false;
+       _appState = Provider.of<AppState>(context);
+       _getUserCredit();
+       _getUserReq();
+       _getUserReqs();
     }
   }
 
@@ -107,126 +107,126 @@ class _AccountScreenState extends State<AccountScreen> {
   void initState() {
     super.initState();
 
-    _getSocialContact();
+     _getSocialContact();
   }
 
   Widget _buildBodyItem() {
     return ListView(
       children: <Widget>[
         SizedBox(height: 50),
-        _appState!.currentUser == null
+        _appState?.currentUser == null
             ? Container(
-                alignment: Alignment.centerRight,
-                padding: EdgeInsets.all(30),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(50.0)),
-                        color: Colors.white,
-                      ),
-                      child: Image.asset(
-                        "assets/images/logo.png",
-                        width: 70,
-                        height: 70,
-                      ),
-                    ),
-                    Padding(padding: EdgeInsets.all(7)),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: <Widget>[
-                        Padding(padding: EdgeInsets.all(4)),
-                        Text(
-                          "زائر",
-                          style: TextStyle(color: cText, fontSize: 18),
-                        ),
-                        Text(
-                          "الحساب الشخصي",
-                          style: TextStyle(color: cText, fontSize: 16),
-                        ),
-                      ],
-                    ),
-                  ],
+          alignment: Alignment.centerRight,
+          padding: EdgeInsets.all(30),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                  color: Colors.white,
                 ),
-              )
-            : Container(
-                alignment: Alignment.centerRight,
-                padding: EdgeInsets.all(18),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Consumer<AppState>(
-                      builder: (context, authProvider, child) {
-                        return CircleAvatar(
-                          backgroundColor: cLightLemon,
-                          backgroundImage: NetworkImage(
-                            _appState!.currentUser!.userPhoto != null
-                                ? _appState!.currentUser!.userPhoto!
-                                : "",
-                          ),
-                          maxRadius: 40,
-                        );
-                      },
-                    ),
-                    Padding(padding: EdgeInsets.all(7)),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: <Widget>[
-                        Padding(padding: EdgeInsets.all(6)),
-                        Text(
-                          _appState!.currentUser!.userName!,
-                          style: TextStyle(color: cPrimaryColor, fontSize: 20),
-                        ),
-                        _appState!.currentUser!.userType == "user"
-                            ? Text(
-                                "الحساب الشخصي",
-                                style: TextStyle(
-                                  color: cPrimaryColor,
-                                  fontSize: 16,
-                                ),
-                              )
-                            : Row(
-                                children: <Widget>[
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      color:
-                                          _appState!.currentUser!.userType ==
-                                              "driver"
-                                          ? cLightLemon
-                                          : cPrimaryColor,
-                                      borderRadius: BorderRadius.all(
-                                        const Radius.circular(15.00),
-                                      ),
-                                    ),
-                                    padding: EdgeInsets.only(
-                                      right: 11,
-                                      left: 11,
-                                      top: 6,
-                                      bottom: 6,
-                                    ),
-                                    child: Text(
-                                      _appState!.currentUser!.userType ==
-                                              "driver"
-                                          ? "مندوب"
-                                          : "تاجر",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 15,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                      ],
-                    ),
-                  ],
+                child: Image.asset(
+                  "assets/images/logo.png",
+                  width: 70,
+                  height: 70,
                 ),
               ),
+              Padding(padding: EdgeInsets.all(7)),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  Padding(padding: EdgeInsets.all(4)),
+                  Text(
+                    "زائر",
+                    style: TextStyle(color: cText, fontSize: 18),
+                  ),
+                  Text(
+                    "الحساب الشخصي",
+                    style: TextStyle(color: cText, fontSize: 16),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        )
+            : Container(
+          alignment: Alignment.centerRight,
+          padding: EdgeInsets.all(18),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Consumer<AppState>(
+                builder: (context, authProvider, child) {
+                  return _appState?.currentUser?.userPhoto == null?SizedBox.shrink():CircleAvatar(
+                    backgroundColor: cLightLemon,
+                    backgroundImage: NetworkImage(
+                      _appState?.currentUser?.userPhoto != null
+                          ? _appState?.currentUser?.userPhoto??""
+                          : "",
+                    ),
+                    maxRadius: 40,
+                  );
+                },
+              ),
+              Padding(padding: EdgeInsets.all(7)),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  Padding(padding: EdgeInsets.all(6)),
+                  Text(
+                    _appState?.currentUser?.userName??"",
+                    style: TextStyle(color: cPrimaryColor, fontSize: 20),
+                  ),
+                  _appState?.currentUser?.userType == "user"
+                      ? Text(
+                    "الحساب الشخصي",
+                    style: TextStyle(
+                      color: cPrimaryColor,
+                      fontSize: 16,
+                    ),
+                  )
+                      : Row(
+                    children: <Widget>[
+                      Container(
+                        decoration: BoxDecoration(
+                          color:
+                          _appState?.currentUser?.userType ==
+                              "driver"
+                              ? cLightLemon
+                              : cPrimaryColor,
+                          borderRadius: BorderRadius.all(
+                            const Radius.circular(15.00),
+                          ),
+                        ),
+                        padding: EdgeInsets.only(
+                          right: 11,
+                          left: 11,
+                          top: 6,
+                          bottom: 6,
+                        ),
+                        child: Text(
+                          _appState?.currentUser?.userType ==
+                              "driver"
+                              ? "مندوب"
+                              : "تاجر",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
         Container(
           padding: EdgeInsets.all(20),
           margin: EdgeInsets.all(_width * .04),
@@ -246,19 +246,19 @@ class _AccountScreenState extends State<AccountScreen> {
             children: <Widget>[
               _appState!.currentUser != null
                   ? Container(
-                      child: ListTile(
-                        leading: Image.asset("assets/images/cart.png"),
-                        title: Text(
-                          "اجمالى عدد الطلبات",
-                          style: TextStyle(color: cPrimaryColor, fontSize: 15),
-                        ),
-                        trailing: Text(
-                          _appState!.currentUser!.userNumberOfCartts!,
-                          style: TextStyle(color: cPrimaryColor, fontSize: 15),
-                        ),
-                        onTap: () {},
-                      ),
-                    )
+                child: ListTile(
+                  leading: Image.asset("assets/images/cart.png"),
+                  title: Text(
+                    "اجمالى عدد الطلبات",
+                    style: TextStyle(color: cPrimaryColor, fontSize: 15),
+                  ),
+                  trailing: Text(
+                    _appState!.currentUser!.userNumberOfCartts!,
+                    style: TextStyle(color: cPrimaryColor, fontSize: 15),
+                  ),
+                  onTap: () {},
+                ),
+              )
                   : Text("", style: TextStyle(height: 0)),
               _appState!.currentUser != null
                   ? Divider(height: 1)
@@ -379,28 +379,28 @@ class _AccountScreenState extends State<AccountScreen> {
                 builder: (context, appState, child) {
                   return appState.currentUser != null
                       ? ListTile(
-                          leading: Icon(
-                            FontAwesomeIcons.signInAlt,
-                            color: cLightRed,
-                            size: 22,
-                          ),
-                          title: Text(
-                            "حذف الحساب",
-                            style: TextStyle(color: cLightRed, fontSize: 15),
-                          ),
-                          onTap: () {
-                            showDialog(
-                              barrierDismissible: true,
-                              context: context,
-                              builder: (_) {
-                                return LogoutDialog(
-                                  alertMessage:
-                                      "هل متاكد انك تريد حذف الحساب ؟",
-                                );
-                              },
-                            );
-                          },
-                        )
+                    leading: Icon(
+                      FontAwesomeIcons.signInAlt,
+                      color: cLightRed,
+                      size: 22,
+                    ),
+                    title: Text(
+                      "حذف الحساب",
+                      style: TextStyle(color: cLightRed, fontSize: 15),
+                    ),
+                    onTap: () {
+                      showDialog(
+                        barrierDismissible: true,
+                        context: context,
+                        builder: (_) {
+                          return LogoutDialog(
+                            alertMessage:
+                            "هل متاكد انك تريد حذف الحساب ؟",
+                          );
+                        },
+                      );
+                    },
+                  )
                       : Text("");
                 },
               ),
@@ -408,49 +408,49 @@ class _AccountScreenState extends State<AccountScreen> {
                 builder: (context, appState, child) {
                   return appState.currentUser != null
                       ? ListTile(
-                          leading: Icon(
-                            FontAwesomeIcons.signInAlt,
-                            color: cLightRed,
-                            size: 22,
-                          ),
-                          title: Text(
-                            AppLocalizations.of(context)!.logOut,
-                            style: TextStyle(color: cLightRed, fontSize: 15),
-                          ),
-                          onTap: () {
-                            showDialog(
-                              barrierDismissible: true,
-                              context: context,
-                              builder: (_) {
-                                return LogoutDialog(
-                                  alertMessage: AppLocalizations.of(
-                                    context,
-                                  )!.wantToLogout,
-                                );
-                              },
-                            );
-                          },
-                        )
+                    leading: Icon(
+                      FontAwesomeIcons.signInAlt,
+                      color: cLightRed,
+                      size: 22,
+                    ),
+                    title: Text(
+                      AppLocalizations.of(context)!.logOut,
+                      style: TextStyle(color: cLightRed, fontSize: 15),
+                    ),
+                    onTap: () {
+                      showDialog(
+                        barrierDismissible: true,
+                        context: context,
+                        builder: (_) {
+                          return LogoutDialog(
+                            alertMessage: AppLocalizations.of(
+                              context,
+                            )!.wantToLogout,
+                          );
+                        },
+                      );
+                    },
+                  )
                       : ListTile(
-                          leading: Transform.rotate(
-                            angle: 180 * math.pi / 180,
-                            child: Icon(
-                              FontAwesomeIcons.signInAlt,
-                              color: cPrimaryColor,
-                              size: 22,
-                            ),
-                          ),
-                          title: Text(
-                            AppLocalizations.of(context)!.enter,
-                            style: TextStyle(
-                              color: cPrimaryColor,
-                              fontSize: 15,
-                            ),
-                          ),
-                          onTap: () {
-                            Navigator.pushNamed(context, '/login_screen');
-                          },
-                        );
+                    leading: Transform.rotate(
+                      angle: 180 * math.pi / 180,
+                      child: Icon(
+                        FontAwesomeIcons.signInAlt,
+                        color: cPrimaryColor,
+                        size: 22,
+                      ),
+                    ),
+                    title: Text(
+                      AppLocalizations.of(context)!.enter,
+                      style: TextStyle(
+                        color: cPrimaryColor,
+                        fontSize: 15,
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/login_screen');
+                    },
+                  );
                 },
               ),
               Container(
@@ -499,8 +499,7 @@ class _AccountScreenState extends State<AccountScreen> {
 
   @override
   Widget build(BuildContext context) {
-    _height =
-        MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top;
+    _height = MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top;
     _width = MediaQuery.of(context).size.width;
 
     return NetworkIndicator(
@@ -516,7 +515,7 @@ class _AccountScreenState extends State<AccountScreen> {
                 right: 0,
                 child: GradientAppBar(
                   appBarTitle: AppLocalizations.of(context)!.account,
-                  trailing: _appState!.currentUser != null
+                  trailing: _appState?.currentUser != null
                       ? Container(
                           padding: EdgeInsets.only(
                             left: _width * .06,
