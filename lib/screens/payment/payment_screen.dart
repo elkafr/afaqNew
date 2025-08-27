@@ -480,7 +480,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                 if (_appState!.checkedValue1 == "1") {
                                   _progressIndicatorState!.setIsLoading(true);
                                   var results = await _services.get(
-                                    '${Utils.MAKE_ORDER_URL}user_id=${_appState!.currentUser!.userId}&cartt_phone=${_appState!.userPhone}&cartt_adress=${_locationState!.address}&cartt_mapx=${_locationState!.locationLatitude}&cartt_mapy=${_locationState!.locationlongitude}&cartt_tawsil=${_appState!.checkedValue}&cartt_type=${_appState!.checkedValue1}&cartt_tawsil_value=${_appState!.currentTawsil}&cartt_estlam=${_appState!.estlam != null ? _appState!.estlam! : 0}&lang=${_appState!.currentLang}',
+                                    '${Utils.MAKE_ORDER_URL}user_id=${_appState?.currentUser?.userId}&cartt_phone=${_appState?.userPhone}&cartt_adress=${_locationState?.address}&cartt_mapx=${_locationState?.locationLatitude}&cartt_mapy=${_locationState?.locationlongitude}&cartt_tawsil=${_appState?.checkedValue}&cartt_type=${_appState?.checkedValue1}&cartt_tawsil_value=${_appState?.currentTawsil}&cartt_estlam=${_appState?.estlam != null ? _appState?.estlam! : 0}&lang=${_appState?.currentLang}',
                                   );
                                   _progressIndicatorState!.setIsLoading(false);
                                   if (results['response'] == '1') {
@@ -524,7 +524,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                   if (response.paymentId != null) {
                                     _progressIndicatorState!.setIsLoading(true);
                                     var results = await _services.get(
-                                      '${Utils.MAKE_ORDER_URL}user_id=${_appState!.currentUser!.userId}&cartt_phone=${_appState!.userPhone}&cartt_adress=${_locationState!.address}&cartt_mapx=${_locationState!.locationLatitude}&cartt_mapy=${_locationState!.locationlongitude}&cartt_tawsil=${_appState!.checkedValue}&cartt_type=${_appState!.checkedValue1}&cartt_tawsil_value=${_appState!.currentTawsil}&cartt_estlam=0&lang=${_appState!.currentLang}',
+                                      '${Utils.MAKE_ORDER_URL}user_id=${_appState?.currentUser?.userId}&cartt_phone=${_appState?.userPhone}&cartt_adress=${_locationState?.address}&cartt_mapx=${_locationState?.locationLatitude}&cartt_mapy=${_locationState?.locationlongitude}&cartt_tawsil=${_appState?.checkedValue}&cartt_type=${_appState?.checkedValue1}&cartt_tawsil_value=${_appState?.currentTawsil}&cartt_estlam=0&lang=${_appState?.currentLang}',
                                     );
                                     _progressIndicatorState!.setIsLoading(
                                       false,
@@ -610,7 +610,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     onPressedConfirmation: () async {
                       _progressIndicatorState!.setIsLoading(true);
                       var results = await _services.get(
-                        '${Utils.DELETE_ALL_CART_URL}user_id=${_appState!.currentUser!.userId}&lang=${_appState!.currentLang}',
+                        '${Utils.DELETE_ALL_CART_URL}user_id=${_appState?.currentUser?.userId}&lang=${_appState?.currentLang}',
                       );
                       _progressIndicatorState!.setIsLoading(false);
                       if (results['response'] == '1') {

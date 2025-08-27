@@ -33,7 +33,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
 
   Future<List<NotificationItem>> _getNotifications() async {
     Map<dynamic, dynamic> results = await _services.get(
-      'https://mahtco.net/app/api/my_inbox1?page=1&user_id=${_appState!.currentUser!.userId}&lang=${_appState!.currentLang}',
+      'https://mahtco.net/app/api/my_inbox1?page=1&user_id=${_appState?.currentUser?.userId}&lang=${_appState?.currentLang}',
     );
     List notificationsList = <NotificationItem>[];
 
@@ -288,7 +288,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                             _progressIndicatorState!.setIsLoading(true);
 
                             var results = await _services.get(
-                              'https://mahtco.net/app/api/do_delete_message1_all?user_id=${_appState!.currentUser!.userId}',
+                              'https://mahtco.net/app/api/do_delete_message1_all?user_id=${_appState?.currentUser?.userId}',
                             );
                             _progressIndicatorState!.setIsLoading(false);
                             if (results['response'] == '1') {

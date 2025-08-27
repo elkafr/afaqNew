@@ -156,7 +156,7 @@ class _LocationDialog1State extends State<LocationDialog1> {
                       Navigator.pop(context);
                       _progressIndicatorState!.setIsLoading(true);
                       var results = await _services.get(
-                        'https://mahtco.net/app/api/send_request1?lang=ar&user_id=${_appState!.currentUser!.userId}&request_cartt=${_appState!.currentOfferCartt}&lang=${_appState!.currentLang}',
+                        'https://mahtco.net/app/api/send_request1?lang=ar&user_id=${_appState?.currentUser?.userId}&request_cartt=${_appState?.currentOfferCartt}&lang=${_appState?.currentLang}',
                       );
                       _progressIndicatorState!.setIsLoading(false);
                       if (results['response'] == '1') {

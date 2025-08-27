@@ -145,7 +145,7 @@ class _RegisterCodeActivationScreenState
             onPressedFunction: () async {
               _progressIndicatorState!.setIsLoading(true);
               var results = await _services.get(
-                'https://mahtco.net/app/api/active_code?user_id=${_appState!.phone111}&user_code=$_activationCode&lang=${_appState!.currentLang}',
+                'https://mahtco.net/app/api/active_code?user_id=${_appState?.phone111}&user_code=$_activationCode&lang=${_appState?.currentLang}',
               );
               _progressIndicatorState!.setIsLoading(false);
               if (results['response'] == '1') {

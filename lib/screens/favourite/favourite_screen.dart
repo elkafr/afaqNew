@@ -31,7 +31,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
 
   Future<List<FavouriteStore>> _getFavouriteStores() async {
     Map<dynamic, dynamic> results = await _services.get(
-      'https://mahtco.net/app/api/my_fav?user_id=${_appState!.currentUser!.userId}&page=1&lang=${_appState!.currentLang}',
+      'https://mahtco.net/app/api/my_fav?user_id=${_appState?.currentUser?.userId}&page=1&lang=${_appState?.currentLang}',
     );
     List<FavouriteStore> storeList = <FavouriteStore>[];
     if (results['response'] == '1') {

@@ -46,7 +46,7 @@ class _AddReqScreenState extends State<AddReqScreen> {
 
   Future<Null> _getUserCredit() async {
     final response = await _services.get(
-      "https://mahtco.net/app/api/get_user_credit?user_id=${_appState!.currentUser!.userId}",
+      "https://mahtco.net/app/api/get_user_credit?user_id=${_appState?.currentUser?.userId}",
     );
 
     if (response['response'] == '1') {
@@ -133,7 +133,7 @@ class _AddReqScreenState extends State<AddReqScreen> {
                     _progressIndicatorState!.setIsLoading(true);
 
                     var results = await _services.get(
-                      '${Utils.BASE_URL}send_req?req_value=$_reqValue&user_id=${_appState!.currentUser!.userId}&req_type=${_appState!.currentUser!.userType}&lang=${_appState!.currentLang}',
+                      '${Utils.BASE_URL}send_req?req_value=$_reqValue&user_id=${_appState?.currentUser?.userId}&req_type=${_appState?.currentUser?.userType}&lang=${_appState?.currentLang}',
                     );
                     _progressIndicatorState!.setIsLoading(false);
                     if (results['response'] == '1') {

@@ -385,11 +385,11 @@ class _Home1ScreenState extends State<OfferScreen> {
                                                     _progressIndicatorState!
                                                         .setIsLoading(true);
                                                     log(
-                                                      'https://mahtco.net/app/api/add_cart?user_id=${_appState!.currentUser!.userId}&ads_id=${snapshot.data![index].adsMtgerId}&amountt=1&lang=${_appState!.currentLang}&cart_price=${snapshot.data![index].adsMtgerPriceAfterDiscount == "1" ? snapshot.data![index].ads_mtger_price_after_discount : snapshot.data![index].adsMtgerPrice}',
+                                                      'https://mahtco.net/app/api/add_cart?user_id=${_appState?.currentUser?.userId}&ads_id=${snapshot.data![index].adsMtgerId}&amountt=1&lang=${_appState?.currentLang}&cart_price=${snapshot.data![index].adsMtgerPriceAfterDiscount == "1" ? snapshot.data![index].ads_mtger_price_after_discount : snapshot.data![index].adsMtgerPrice}',
                                                     );
                                                     var results =
                                                         await _services.get(
-                                                          'https://mahtco.net/app/api/add_cart?user_id=${_appState!.currentUser!.userId}&ads_id=${snapshot.data![index].adsMtgerId}&amountt=1&lang=${_appState!.currentLang}&cart_price=${snapshot.data![index].adsMtgerPriceAfterDiscount == "1" ? snapshot.data![index].ads_mtger_price_after_discount : snapshot.data![index].adsMtgerPrice}',
+                                                          'https://mahtco.net/app/api/add_cart?user_id=${_appState?.currentUser?.userId}&ads_id=${snapshot.data![index].adsMtgerId}&amountt=1&lang=${_appState?.currentLang}&cart_price=${snapshot.data![index].adsMtgerPriceAfterDiscount == "1" ? snapshot.data![index].ads_mtger_price_after_discount : snapshot.data![index].adsMtgerPrice}',
                                                         );
                                                     _progressIndicatorState!
                                                         .setIsLoading(false);
@@ -861,11 +861,11 @@ class _Home1ScreenState extends State<OfferScreen> {
                                                         .setIsLoading(true);
 
                                                     print(
-                                                      'https://mahtco.net/app/api/add_cart?user_id=${_appState!.currentUser!.userId}&ads_id=${snapshot.data![index].adsMtgerId}&amountt=1&lang=${_appState!.currentLang}&cart_price=${snapshot.data![index].adsMtgerPrice}',
+                                                      'https://mahtco.net/app/api/add_cart?user_id=${_appState?.currentUser?.userId}&ads_id=${snapshot.data![index].adsMtgerId}&amountt=1&lang=${_appState?.currentLang}&cart_price=${snapshot.data![index].adsMtgerPrice}',
                                                     );
                                                     var results =
                                                         await _services.get(
-                                                          'https://mahtco.net/app/api/add_cart?user_id=${_appState!.currentUser!.userId}&ads_id=${snapshot.data![index].adsMtgerId}&amountt=1&lang=${_appState!.currentLang}&cart_price=${snapshot.data![index].adsMtgerPriceAfterDiscount == "1" ? snapshot.data![index].ads_mtger_price_after_discount : snapshot.data![index].adsMtgerPrice}',
+                                                          'https://mahtco.net/app/api/add_cart?user_id=${_appState?.currentUser?.userId}&ads_id=${snapshot.data![index].adsMtgerId}&amountt=1&lang=${_appState?.currentLang}&cart_price=${snapshot.data![index].adsMtgerPriceAfterDiscount == "1" ? snapshot.data![index].ads_mtger_price_after_discount : snapshot.data![index].adsMtgerPrice}',
                                                         );
                                                     _progressIndicatorState!
                                                         .setIsLoading(false);

@@ -109,7 +109,7 @@ class _CashState extends State<Cash> {
                   btnLbl: "تاكيد الطلب",
                   onPressedFunction: () async {
                     var results = await _services.get(
-                      '${Utils.MAKE_ORDER_URL}user_id=${_appState!.currentUser!.userId}&cartt_phone=${_paymentState!.userPhone}&cartt_adress=${_locationState!.address}&cartt_mapx=${_locationState!.locationLatitude}&cartt_mapy=${_locationState!.locationlongitude}&cartt_tawsil=${_appState!.checkedValue}&cartt_tawsil_value=${_appState!.currentTawsil}&lang=${_appState!.currentLang}',
+                      '${Utils.MAKE_ORDER_URL}user_id=${_appState?.currentUser?.userId}&cartt_phone=${_paymentState?.userPhone}&cartt_adress=${_locationState?.address}&cartt_mapx=${_locationState?.locationLatitude}&cartt_mapy=${_locationState?.locationlongitude}&cartt_tawsil=${_appState?.checkedValue}&cartt_tawsil_value=${_appState?.currentTawsil}&lang=${_appState?.currentLang}',
                     );
 
                     if (results['response'] == '1') {

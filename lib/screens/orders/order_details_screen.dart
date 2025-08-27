@@ -25,7 +25,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
 
   Future<Order> _getOrderDetails() async {
     Map<dynamic, dynamic> results = await _services.get(
-      '${Utils.SHOW_ORDER_DETAILS_URL}lang=${_appState!.currentLang}&user_id=${_appState!.currentUser!.userId}&cartt_fatora=${_orderState!.carttFatora}',
+      '${Utils.SHOW_ORDER_DETAILS_URL}lang=${_appState?.currentLang}&user_id=${_appState?.currentUser?.userId}&cartt_fatora=${_orderState?.carttFatora}',
     );
     Order orderDetails = Order();
     if (results['response'] == '1') {

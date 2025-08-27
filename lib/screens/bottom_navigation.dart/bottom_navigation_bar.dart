@@ -51,7 +51,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
 
   Future<String> getUnreadNotify() async {
     final response = await _services.get(
-      "https://mahtco.net/app/api/get_unread_notify?user_id=${_appState!.currentUser!.userId}",
+      "https://mahtco.net/app/api/get_unread_notify?user_id=${_appState.currentUser?.userId}",
     );
     String messages = '';
     if (response['response'] == '1') {
@@ -65,7 +65,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
 
   Future<String> getUnreadCartt() async {
     final response = await _services.get(
-      "https://mahtco.net/app/api/get_unread_cartt?user_id=${_appState!.currentUser!.userId}",
+      "https://mahtco.net/app/api/get_unread_cartt?user_id=${_appState.currentUser?.userId}",
     );
     String messages = '';
     if (response['response'] == '1') {

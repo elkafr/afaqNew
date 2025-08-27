@@ -25,7 +25,7 @@ class _DriverPreviousOrdersState extends State<DriverPreviousOrders> {
 
   Future<List<Order>> _getOrderList() async {
     Map<dynamic, dynamic> results = await _services.get(
-      '${Utils.DRIVER_ORDERS_URL}lang=${_appState!.currentLang}&user_id=${_appState!.currentUser!.userId}&page=1&done=0',
+      '${Utils.DRIVER_ORDERS_URL}lang=${_appState?.currentLang}&user_id=${_appState?.currentUser?.userId}&page=1&done=0',
     );
     List orderList = <Order>[];
     if (results['response'] == '1') {

@@ -57,19 +57,19 @@ class _AccountScreenState extends State<AccountScreen> {
 
   Future<Null> _getUserCredit() async {
     final response = await _services.get(
-      "https://mahtco.net/app/api/get_user_credit?user_id=${_appState!.currentUser!.userId}",
+      "https://mahtco.net/app/api/get_user_credit?user_id=${_appState?.currentUser?.userId}",
     );
 
     if (response['response'] == '1') {
       setState(() {
-        _userCredit = response['user_credit'];
+        _userCredit = response['user_credit']??"";
       });
     }
   }
 
   Future<Null> _getUserReq() async {
     final response = await _services.get(
-      "https://mahtco.net/app/api/get_user_credit?user_id=${_appState!.currentUser!.userId}",
+      "https://mahtco.net/app/api/get_user_credit?user_id=${_appState?.currentUser?.userId}",
     );
 
     if (response['response'] == '1') {
@@ -81,7 +81,7 @@ class _AccountScreenState extends State<AccountScreen> {
 
   Future<Null> _getUserReqs() async {
     final response = await _services.get(
-      "https://mahtco.net/app/api/get_user_credit?user_id=${_appState!.currentUser!.userId}",
+      "https://mahtco.net/app/api/get_user_credit?user_id=${_appState?.currentUser?.userId}",
     );
 
     if (response['response'] == '1') {

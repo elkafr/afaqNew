@@ -236,7 +236,7 @@ class _ModifyPersonalInformationScreenState
                           _progressIndicatorState!.setIsLoading(true);
 
                           var results = await _services.get(
-                            'https://mahtco.net/app/api/profile?user_email=$_userEmail&user_name=$_userName&user_phone=$_userPhone&user_city=${_selectedCity!.cityId}&user_id=${_appState!.currentUser!.userId}&lang=${_appState!.currentLang}',
+                            'https://mahtco.net/app/api/profile?user_email=$_userEmail&user_name=$_userName&user_phone=$_userPhone&user_city=${_selectedCity?.cityId}&user_id=${_appState?.currentUser?.userId}&lang=${_appState?.currentLang}',
                           );
                           _progressIndicatorState!.setIsLoading(false);
                           if (results['response'] == '1') {

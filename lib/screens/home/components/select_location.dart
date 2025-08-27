@@ -36,7 +36,7 @@ class _SelectLocationState extends State<SelectLocation> {
     String language = await SharedPreferencesHelper.getUserLang();
     Map<dynamic, dynamic> results = await _services.get(
       Utils.LOCATIONS_URL +
-          '?user_id=${_appState!.currentUser != null ? _appState!.currentUser!.userId : "0"}&lang=$language',
+          '?user_id=${_appState?.currentUser != null ? _appState?.currentUser?.userId : "0"}&lang=$language',
     );
     List locationList = <Location>[];
     if (results['response'] == '1') {
